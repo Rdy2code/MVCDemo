@@ -32,6 +32,7 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         val navView = findViewById<NavigationView>(R.id.nav_view)
         navView.setNavigationItemSelectedListener (this)
 
+        //Add hamburger icon to toolbar for Nav Drawer
         val toggle = ActionBarDrawerToggle(
             this,
             drawerLayout,
@@ -49,7 +50,7 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        if (item?.itemId == R.id.action_about) {
+        if (item.itemId == R.id.action_about) {
             AboutActivity.start(this)
             return true
         }
@@ -63,7 +64,6 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
                 AboutActivity.start(this)
             }
         }
-
         return true
     }
 }
